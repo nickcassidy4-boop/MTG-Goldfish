@@ -336,6 +336,6 @@ class Game:
                 self.result.kill_turn = self.turn
                 break
         for c in self.hand:
-            if not c.interaction and self.turn - self.result.drawn_turn.get(c.card.name, self.turn) >= 3:
+            if not c.interaction and not c.card.is_land and self.turn - self.result.drawn_turn.get(c.card.name, self.turn) >= 3:
                 self.result.stuck.add(c.card.name)
         return self.result

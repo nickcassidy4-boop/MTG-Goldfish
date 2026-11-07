@@ -89,6 +89,7 @@ class Games(unittest.TestCase):
         self.assertEqual(len(rep["damageByTurn"]), 10)
         self.assertTrue(rep["sampleGame"] and rep["sampleGame"][0]["turn"] == 1)
         self.assertIsNone(rep["commanderCast"]["rate"])
+        self.assertNotIn("Mountain", [c["name"] for c in rep["deadCards"]], "spare lands waiting in hand aren't dead cards")
         self.assertIn("Goldfish report", report.markdown(rep))
 
     def test_commander_starts_in_the_command_zone(self):
