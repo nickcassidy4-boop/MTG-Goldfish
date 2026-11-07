@@ -119,3 +119,18 @@ class GameCount(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Api(unittest.TestCase):
+    def test_simulate_from_another_program(self):
+        from goldfish.api import simulate
+        details = [c.__dict__ for c in (MOUNTAIN, BEAR, BOLT, SIGN, KRENKO)]
+        cards_ = [{"name": "Krenko, Mob Boss", "qty": 1}, {"name": "Raging Bear", "qty": 30}, {"name": "Mind Stone", "qty": 31},
+                  {"name": "Mountain", "qty": 38}]
+        rep = simulate(cards=cards_, details=details, format="commander", commander="Krenko, Mob Boss", games=100, seed=1, name="T")
+        self.assertEqual((rep["games"], rep["turns"], rep["commander"]), (100, 10, "Krenko, Mob Boss"))
+        self.assertGreater(rep["commanderCast"]["rate"], 0.8)
+        with self.assertRaises(ValueError):
+            simulate(cards=cards_, details=details, format="commander", games=10)  # no commander
+        with self.assertRaises(ValueError):
+            simulate(cards=cards_, details=details, format="standard", games=10_000, max_games=5000)

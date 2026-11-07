@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mtg-goldfish"
+version = "1.0"
+description = "A goldfish simulator for Magic: The Gathering decks, made for AI assistants and apps to run."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools]
+packages = ["goldfish"]
