@@ -1,0 +1,12 @@
+// A 60-card mono-red aggro deck (no format marked: the AI asks which).
+4 Monastery Swiftspear
+4 Kumano Faces Kakkazan
+4 Phoenix Chick
+4 Feldon, Ronom Excavator
+4 Heartfire Hero
+4 Emberheart Challenger
+4 Lightning Strike
+4 Play with Fire
+4 Burst Lightning
+4 Shock
+20 Mountain

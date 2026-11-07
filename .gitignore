@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.card-cache.json
+goldfish-report.json
+goldfish-report.md
+deck.txt
+cards.json
+NUL
